@@ -1,2 +1,2 @@
 # TP_AySO_integral_rejunte
-Thiago Ramos - 114637
+Leandro Manuel More -117881
