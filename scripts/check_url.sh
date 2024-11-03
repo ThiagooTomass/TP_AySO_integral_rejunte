@@ -1,3 +1,4 @@
+#!/bin/bash
 ###############################
 #
 # Parametros:
@@ -10,7 +11,7 @@
 ###############################
 LISTA=$1
 
-LOG_FILE="/var/log/status_url.log"
+LOG_FILE="/var/log/status_URL.log"
 
 DIRECTORIO="/tmp/head-check/"
 
@@ -18,8 +19,8 @@ ANT_IFS=$IFS
 IFS=$'\n'
 
  if [[ ! -f $LOG_FILE ]]; then
-	touch $LOG_FILE
-	echo "Se creo el archivo status_url.log"
+	sudo touch $LOG_FILE
+	echo "Se creo el archivo status_URL.log"
  fi
 
  if [[ ! -d $DIRECTORIO ]]; then
@@ -37,38 +38,26 @@ IFS=$'\n'
 	DOMINIO=$(echo $LINEA | awk '{print $1}')
 	STATUS_CODE=$(curl -LI -o /dev/null -w '%{http_code}\n' -s "$URL")
 	TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-	echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" | tee -a $LOG_FILE
-	
+	#echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" >> $LOG_FILE
+	echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" | sudo tee -a $LOG_FILE
 	
 	if [[ $STATUS_CODE == 200 ]]; then
 		touch "$DIRECTORIO/ok/$DOMINIO.com"
 		echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" >> "$DIRECTORIO/ok/$DOMINIO.com"
 	fi
 
-	if [[ $STATUS_CODE >= 400 && $STATUS_CODE <= 499 ]]; then
+	if [[ $STATUS_CODE -ge 400 && $STATUS_CODE -le 499 ]]; then
 		touch "$DIRECTORIO/Error/cliente/$DOMINIO.com"
 		echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" >> "$DIRECTORIO/Error/cliente/$DOMINIO.com"
 	fi
 
-	if [[ $STATUS_CODE >= 500 && $STATUS_CODE <= 599 ]]; then
+	if [[ $STATUS_CODE -ge 500 && $STATUS_CODE -le 599 ]]; then
                 touch "$DIRECTORIO/Error/servidor/$DOMINIO.com"
 		echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" >> "$DIRECTORIO/Error/servidor/$DOMINIO.com"
         fi
 	
  done
-
-
-  #STATUS_CODE=$(curl -LI -o /dev/null -w '%{http_code}\n' -s "https://www.google.com/")
-
-  # Fecha y hora actual en formato yyyymmdd_hhmmss
-  #TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-
-
- # Registrar en el archivo /var/log/status_url.log
-  #echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL"
-
-
-
+  
 #-------------------------#
 
 IFS=$ANT_IFS
