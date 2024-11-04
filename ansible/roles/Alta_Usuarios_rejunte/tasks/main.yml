@@ -1,0 +1,79 @@
+---
+# tasks file for Alta_Usuarios_rejunte
+
+# tasks file for Alta_Usuarios_rejunte
+
+- name: "Rol: Alta_Usuarios - Grupo: Rejunte"
+  debug:
+    msg: "Inicio de tareas dentro del Rol: Alta_Usuarios"
+
+- name: "Creo grupos"
+  become: yes
+  ansible.builtin.group:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - G_R1
+    - G_R2
+    - G_R3
+    - G_R4
+    - G_R5
+    - G_R6
+    - rejunte
+
+- name: "Crea usuario R1"
+  become: yes
+  user:
+    name: R1_Thiago_Ramos
+    group: G_R1
+    groups: rejunte
+    state: present
+    password: "$y$j9T$f7V.J8o8/5JXqaI3xUKKQ0$oND2iaEkOI22AcHc9kfKwylXqBi.VixFO/cPGuxMD"
+
+- name: "Crea usuario R2"
+  become: yes
+  user:
+    name: R2_Patricio_Moretti
+    group: G_R2
+    groups: rejunte
+    state: present
+    password: "$y$j9T$f7V.J8o8/5JXqaI3xUKKQ0$oND2iaEkOI22AcHc9kfKwylXqBi.VixFO/cPGuxMD"
+
+- name: "Crea usuario R3"
+  become: yes
+  user:
+    name: R3_Tadeo_Agustin_Iuliani
+    group: G_R3
+    groups: rejunte
+    state: present
+    password: "$y$j9T$f7V.J8o8/5JXqaI3xUKKQ0$oND2iaEkOI22AcHc9kfKwylXqBi.VixFO/cPGuxMD"
+
+- name: "Crea usuario R4"
+  become: yes
+  user:
+    name: R4_Giuliana_Delgobbo
+    group: G_R4
+    groups: rejunte
+    state: present
+    password: "$y$j9T$f7V.J8o8/5JXqaI3xUKKQ0$oND2iaEkOI22AcHc9kfKwylXqBi.VixFO/cPGuxMD"
+
+- name: "Crea usuario R5"
+  become: yes
+  user:
+    name: R5_Leandro_Manuel_More
+    group: G_R5
+    groups: rejunte
+    state: present
+    password: "$y$j9T$f7V.J8o8/5JXqaI3xUKKQ0$oND2iaEkOI22AcHc9kfKwylXqBi.VixFO/cPGuxMD"
+
+- name: "Crea usuario R6"
+  become: yes
+  user:
+    name: R6_Thiago_Ramos
+    group: G_R6
+    groups: rejunte
+    state: present
+    password: "$y$j9T$f7V.J8o8/5JXqaI3xUKKQ0$oND2iaEkOI22AcHc9kfKwylXqBi.VixFO/cPGuxMD"
+
+
+

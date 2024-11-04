@@ -1,0 +1,16 @@
+---
+# tasks file for Sudoers_rejunte
+
+
+- name: "Rol: Sudoers_rejunte - Grupo: Rejunte"
+  debug:
+   msg: "Inicio de tareas dentro del Rol: Sudoers_rejunte"
+
+
+- name: "Agregar grupo rejunte a sudoers sin clave"
+  become: yes
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    line: '%rejunte ALL=(ALL) NOPASSWD: ALL'
+

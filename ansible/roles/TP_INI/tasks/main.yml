@@ -1,0 +1,34 @@
+---
+# tasks file for TP_INI
+
+ - name: "Rol: TP_INI - Grupo: Rejunte"
+   debug:
+     msg: "Inicio de tareas dentro del Rol: TP_INI"
+
+ - name: "Crear directorio para el archivo"
+   file:
+     path: /tmp/Grupo
+     state: directory
+
+ - name: "Crear archivo datos.txt con información del grupo"
+   copy:
+     dest: /tmp/Grupo/datos.txt
+     owner: vagrant
+     content: |
+      Nombre Grupo: rejunte
+      División: 314-2
+      Fecha: 3/11/2024
+      —-------------------------
+      Distribución: Fedora
+      Cantidad de Cores: dos
+      —-------------------------
+      R1: Nombre: Thiago         Apellido: Ramos 
+      R2: Nombre: Patricio       Apellido: Moretti 
+      R3: Nombre: Tadeo Agustin  Apellido: Iuliani 
+      R4: Nombre: Giuliana       Apellido: Delgobbo 
+      R5: Nombre: Leandro Manuel Apellido: More 
+      R6: Nombre: Thiago         Apellido: Ramos 
+
+
+
+

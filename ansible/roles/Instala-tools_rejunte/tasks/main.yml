@@ -1,0 +1,17 @@
+---
+# tasks file for Instala-tools_rejunte
+
+
+- name: "Rol: Instala-tools_rejunte - Grupo: Rejunte"
+  debug:
+    msg: "Inicio de tareas dentro del Rol: Instala-tools_rejunte"
+
+- name: "Instala herramientas"
+  become: yes
+  package:
+    name:
+      - htop
+      - tmux
+      - speedtest-cli
+    state: present
+
