@@ -34,12 +34,6 @@ do
 		else
 			echo "El grupo ya existia: $GRUPO"
 		fi
-		if [[ ! -d $DIRECTORIO ]];then
-			sudo mkdir $DIRECTORIO
-			echo "Directorio creado"
-		else
-			echo "El directorio ya existia"
-		fi
 		echo "El usuario se va a crear..."
 		sudo useradd -m -d $DIRECTORIO -s /bin/bash -g $GRUPO -p $USUARIO_CLAVE $USUARIO
 
