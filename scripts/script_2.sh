@@ -1,7 +1,7 @@
-#./bin/bash
+#!/bin/bash
 
 echo "Creo particion tipo LVM para disco 5G" 
-sudo fdisk /dev/sdg <<EOF
+sudo fdisk /dev/sdc <<EOF
 n
 
 
@@ -15,11 +15,11 @@ EOF
 echo "Creo LVM en disco 5G"
 
 #limpio mugre
-sudo wipefs -a /dev/sdg1
+sudo wipefs -a /dev/sdc1
 
-sudo pvcreate /dev/sdg1
+sudo pvcreate /dev/sdc1
 
-sudo vgcreate vg_datos /dev/sdg1
+sudo vgcreate vg_datos /dev/sdc1
 
 sudo lvcreate -L +10M vg_datos -n lv_docker
 sudo lvcreate -L +2.5G vg_datos -n lv_workareas
@@ -27,12 +27,14 @@ sudo lvcreate -L +2.5G vg_datos -n lv_workareas
 sudo mkfs.ext4 /dev/mapper/vg_datos-lv_docker
 sudo mkfs.ext4 /dev/mapper/vg_datos-lv_workareas
 
+sudo mkdir -p /var/lib/docker
+sudo mkdir -p /work
+
 
 echo "Monto de forma persistente"
 
-sudo mount /dev/mapper/vg_datos-lv_docker /var/lib/docker ext4 defaults 0 0 | sudo tee -a /etc/fstab
-
-sudo mount /dev/mapper/vg_datos-lv_workareas /work ext4 defaults 0 0 | sudo tee -a /etc/fstab
+echo "/dev/mapper/vg_datos-lv_docker /var/lib/docker ext4 defaults 0 0" | sudo tee -a /etc/fstab
+echo "/dev/mapper/vg_datos-lv_workareas /work ext4 defaults 0 0" | sudo tee -a /etc/fstab
 
 
 
@@ -57,15 +59,15 @@ sudo vgcreate vg_temp /dev/sdd1
 
 sudo lvcreate -L +2.5G vg_temp -n lv_swap
 
-sudo mkfs.ext4 /dev/mapper/vg_temp-lv_swap
+sudo mkswap /dev/mapper/vg_temp-lv_swap
 
 
 echo "Monto de forma persistente"
 
-sudo mount /dev/mapper/vg_temp-lv_swap "Aca punto de montaje" ext4 defaults 0 0 | sudo tee -a /etc/fstab
+echo "/dev/mapper/vg_temp-lv_swap none swap sw 0 0" | sudo tee -a /etc/fstab
 
-
-
+sudo swapon -a
+sudo mount -a
 
 echo "Creo particion tipo LVM para disco 2G"
 sudo fdisk /dev/sde << EOF
@@ -78,3 +80,4 @@ t
 82
 w
 EOF
+echo "LVM terminado"
