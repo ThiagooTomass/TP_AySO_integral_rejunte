@@ -1,7 +1,7 @@
 #./bin/bash
 
 echo "Creo particion tipo LVM para disco 5G" 
-sudo fdisk /dev/sdg
+sudo fdisk /dev/sdg <<EOF
 n
 
 
@@ -10,6 +10,7 @@ n
 t
 8e
 w
+EOF
 
 echo "Creo LVM en disco 5G"
 
@@ -37,7 +38,7 @@ sudo mount /dev/mapper/vg_datos-lv_workareas /work ext4 defaults 0 0 | sudo tee 
 
 
 echo "Creo particion tipo LVM para disco 3G"
-sudo fdisk /dev/sdd
+sudo fdisk /dev/sdd << EOF
 n
 
 
@@ -46,7 +47,7 @@ n
 t
 8e
 w
-
+EOF
 
 sudo wipefs -a /dev/sdd1
 
@@ -67,7 +68,7 @@ sudo mount /dev/mapper/vg_temp-lv_swap "Aca punto de montaje" ext4 defaults 0 0 
 
 
 echo "Creo particion tipo LVM para disco 2G"
-sudo fdisk /dev/sde
+sudo fdisk /dev/sde << EOF
 n
 
 
@@ -76,3 +77,4 @@ n
 t
 82
 w
+EOF
