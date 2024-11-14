@@ -1,8 +1,8 @@
 ---
 - hosts: 
-#  - all
-  - testing
-  - produccion
+  - all
+    #  - testing
+    #  - produccion
 
   # Variables Globales
   vars_files:
