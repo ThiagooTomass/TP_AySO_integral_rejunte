@@ -13,5 +13,7 @@
       - htop
       - tmux
       - speedtest-cli
+      - ansible
+      - git
     state: present
 

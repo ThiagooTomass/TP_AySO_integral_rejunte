@@ -1,6 +1,5 @@
 ---
 # vars file for TP_INI
 
-#Nombre_Grupo: "Nombre-Grupo-Ejemplo"
-
-Variable_Vars_main: "valor_ejemplo"
+Nombre_Grupo: "rejunte"
+Division: "314"
