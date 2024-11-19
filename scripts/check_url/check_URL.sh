@@ -18,10 +18,7 @@ DIRECTORIO="/tmp/head-check/"
 ANT_IFS=$IFS
 IFS=$'\n'
 
- if [[ ! -f $LOG_FILE ]]; then
-	sudo touch $LOG_FILE
-	echo "Se creo el archivo status_URL.log"
- fi
+ 
 
  if [[ ! -d $DIRECTORIO ]]; then
 	 mkdir -p /tmp/head-check/{Error/{cliente,servidor},ok}
