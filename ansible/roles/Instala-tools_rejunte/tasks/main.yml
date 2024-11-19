@@ -15,5 +15,6 @@
       - speedtest-cli
       - ansible
       - git
+      - sshpass
     state: present
 
