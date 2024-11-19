@@ -4,7 +4,7 @@ version: '3'
   # imagen de manuel: manumore3/repo_utn:tagmanu
   # imagen de giuliana: giudelgo/tp-div_314_grupo_rejunte
   # imagen de santiago: santi0809/tp_integral
-  # imagen de tadeo:
+  # imagen de tadeo: tadeoiuliani/web
   # imagen de patricio:
   #
 services:
