@@ -8245,3 +8245,175 @@ The offending line appears to be:
 2024-11-19 22:11:49,403 p=12911 u=vagrant n=ansible | 192.168.56.4               : ok=16   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2024-11-19 22:11:49,403 p=12911 u=vagrant n=ansible | 192.168.56.5               : ok=16   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2024-11-19 22:11:49,403 p=12911 u=vagrant n=ansible | localhost                  : ok=16   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-19 23:25:01,248 p=9586 u=vagrant n=ansible | PLAY [all] ****************************************************************************************************************************************************
+2024-11-19 23:25:01,307 p=9586 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************************
+2024-11-19 23:25:01,346 p=9586 u=vagrant n=ansible | fatal: [192.168.56.4]: FAILED! => {"msg": "to use the 'ssh' connection type with passwords, you must install the sshpass program"}
+2024-11-19 23:25:01,347 p=9586 u=vagrant n=ansible | fatal: [192.168.56.5]: FAILED! => {"msg": "to use the 'ssh' connection type with passwords, you must install the sshpass program"}
+2024-11-19 23:25:02,191 p=9586 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:25:02,205 p=9586 u=vagrant n=ansible | TASK [include_role : TP_INI] **********************************************************************************************************************************
+2024-11-19 23:25:02,229 p=9586 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Rejunte] ******************************************************************************************************************
+2024-11-19 23:25:02,241 p=9586 u=vagrant n=ansible | ok: [localhost] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-19 23:25:02,247 p=9586 u=vagrant n=ansible | TASK [TP_INI : Creo directorio para el archivo] ***************************************************************************************************************
+2024-11-19 23:25:02,479 p=9586 u=vagrant n=ansible | changed: [localhost]
+2024-11-19 23:25:02,488 p=9586 u=vagrant n=ansible | TASK [TP_INI : Creo el archivo desde template] ****************************************************************************************************************
+2024-11-19 23:25:02,914 p=9586 u=vagrant n=ansible | changed: [localhost]
+2024-11-19 23:25:02,921 p=9586 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_rejunte] *******************************************************************************************************************
+2024-11-19 23:25:02,949 p=9586 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Rol: Alta_Usuarios - Grupo: Rejunte] ********************************************************************************************
+2024-11-19 23:25:02,961 p=9586 u=vagrant n=ansible | ok: [localhost] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios"
+}
+2024-11-19 23:25:02,966 p=9586 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Creo grupos] ********************************************************************************************************************
+2024-11-19 23:25:03,237 p=9586 u=vagrant n=ansible | changed: [localhost] => (item=G_R1)
+2024-11-19 23:25:03,401 p=9586 u=vagrant n=ansible | changed: [localhost] => (item=G_R2)
+2024-11-19 23:25:03,566 p=9586 u=vagrant n=ansible | changed: [localhost] => (item=G_R3)
+2024-11-19 23:25:03,726 p=9586 u=vagrant n=ansible | changed: [localhost] => (item=G_R4)
+2024-11-19 23:25:03,890 p=9586 u=vagrant n=ansible | changed: [localhost] => (item=G_R5)
+2024-11-19 23:25:04,050 p=9586 u=vagrant n=ansible | changed: [localhost] => (item=G_R6)
+2024-11-19 23:25:04,217 p=9586 u=vagrant n=ansible | changed: [localhost] => (item=rejunte)
+2024-11-19 23:25:04,223 p=9586 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R1] ****************************************************************************************************************
+2024-11-19 23:25:04,542 p=9586 u=vagrant n=ansible | changed: [localhost]
+2024-11-19 23:25:04,549 p=9586 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R2] ****************************************************************************************************************
+2024-11-19 23:25:04,778 p=9586 u=vagrant n=ansible | changed: [localhost]
+2024-11-19 23:25:04,785 p=9586 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R3] ****************************************************************************************************************
+2024-11-19 23:25:04,994 p=9586 u=vagrant n=ansible | changed: [localhost]
+2024-11-19 23:25:05,025 p=9586 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R4] ****************************************************************************************************************
+2024-11-19 23:25:05,230 p=9586 u=vagrant n=ansible | changed: [localhost]
+2024-11-19 23:25:05,236 p=9586 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R5] ****************************************************************************************************************
+2024-11-19 23:25:05,440 p=9586 u=vagrant n=ansible | changed: [localhost]
+2024-11-19 23:25:05,446 p=9586 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R6] ****************************************************************************************************************
+2024-11-19 23:25:05,658 p=9586 u=vagrant n=ansible | changed: [localhost]
+2024-11-19 23:25:05,665 p=9586 u=vagrant n=ansible | TASK [include_role : Sudoers_rejunte] *************************************************************************************************************************
+2024-11-19 23:25:05,690 p=9586 u=vagrant n=ansible | TASK [Sudoers_rejunte : Rol: Sudoers_rejunte - Grupo: Rejunte] ************************************************************************************************
+2024-11-19 23:25:05,702 p=9586 u=vagrant n=ansible | ok: [localhost] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_rejunte"
+}
+2024-11-19 23:25:05,709 p=9586 u=vagrant n=ansible | TASK [Sudoers_rejunte : Agregar grupo rejunte a sudoers sin clave] ********************************************************************************************
+2024-11-19 23:25:05,925 p=9586 u=vagrant n=ansible | changed: [localhost]
+2024-11-19 23:25:05,930 p=9586 u=vagrant n=ansible | TASK [include_role : Instala-tools_rejunte] *******************************************************************************************************************
+2024-11-19 23:25:05,955 p=9586 u=vagrant n=ansible | TASK [Instala-tools_rejunte : Rol: Instala-tools_rejunte - Grupo: Rejunte] ************************************************************************************
+2024-11-19 23:25:05,968 p=9586 u=vagrant n=ansible | ok: [localhost] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_rejunte"
+}
+2024-11-19 23:25:05,975 p=9586 u=vagrant n=ansible | TASK [Instala-tools_rejunte : Instala herramientas] ***********************************************************************************************************
+2024-11-19 23:25:12,222 p=9586 u=vagrant n=ansible | changed: [localhost]
+2024-11-19 23:25:12,231 p=9586 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************************************************
+2024-11-19 23:25:12,231 p=9586 u=vagrant n=ansible | 192.168.56.4               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-19 23:25:12,231 p=9586 u=vagrant n=ansible | 192.168.56.5               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-19 23:25:12,232 p=9586 u=vagrant n=ansible | localhost                  : ok=16   changed=11   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-19 23:26:43,093 p=10464 u=vagrant n=ansible | PLAY [all] ****************************************************************************************************************************************************
+2024-11-19 23:26:43,143 p=10464 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************************
+2024-11-19 23:26:44,629 p=10464 u=vagrant n=ansible | ok: [192.168.56.5]
+2024-11-19 23:26:44,875 p=10464 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:26:45,318 p=10464 u=vagrant n=ansible | ok: [192.168.56.4]
+2024-11-19 23:26:45,329 p=10464 u=vagrant n=ansible | TASK [include_role : Instala-tools_rejunte] *******************************************************************************************************************
+2024-11-19 23:26:45,390 p=10464 u=vagrant n=ansible | TASK [Instala-tools_rejunte : Rol: Instala-tools_rejunte - Grupo: Rejunte] ************************************************************************************
+2024-11-19 23:26:45,430 p=10464 u=vagrant n=ansible | ok: [192.168.56.4] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_rejunte"
+}
+2024-11-19 23:26:45,432 p=10464 u=vagrant n=ansible | ok: [192.168.56.5] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_rejunte"
+}
+2024-11-19 23:26:45,437 p=10464 u=vagrant n=ansible | ok: [localhost] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_rejunte"
+}
+2024-11-19 23:26:45,444 p=10464 u=vagrant n=ansible | TASK [Instala-tools_rejunte : Instala herramientas] ***********************************************************************************************************
+2024-11-19 23:26:47,562 p=10464 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:26:47,626 p=10464 u=vagrant n=ansible | ok: [192.168.56.4]
+2024-11-19 23:27:12,801 p=10464 u=vagrant n=ansible | changed: [192.168.56.5]
+2024-11-19 23:27:12,806 p=10464 u=vagrant n=ansible | TASK [include_role : TP_INI] **********************************************************************************************************************************
+2024-11-19 23:27:12,870 p=10464 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Rejunte] ******************************************************************************************************************
+2024-11-19 23:27:12,914 p=10464 u=vagrant n=ansible | ok: [192.168.56.4] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-19 23:27:12,917 p=10464 u=vagrant n=ansible | ok: [192.168.56.5] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-19 23:27:12,921 p=10464 u=vagrant n=ansible | ok: [localhost] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-19 23:27:12,926 p=10464 u=vagrant n=ansible | TASK [TP_INI : Creo directorio para el archivo] ***************************************************************************************************************
+2024-11-19 23:27:13,479 p=10464 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:27:13,532 p=10464 u=vagrant n=ansible | ok: [192.168.56.4]
+2024-11-19 23:27:13,538 p=10464 u=vagrant n=ansible | changed: [192.168.56.5]
+2024-11-19 23:27:13,545 p=10464 u=vagrant n=ansible | TASK [TP_INI : Creo el archivo desde template] ****************************************************************************************************************
+2024-11-19 23:27:14,627 p=10464 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:27:14,775 p=10464 u=vagrant n=ansible | ok: [192.168.56.4]
+2024-11-19 23:27:14,821 p=10464 u=vagrant n=ansible | changed: [192.168.56.5]
+2024-11-19 23:27:14,827 p=10464 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_rejunte] *******************************************************************************************************************
+2024-11-19 23:27:14,898 p=10464 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Rol: Alta_Usuarios - Grupo: Rejunte] ********************************************************************************************
+2024-11-19 23:27:14,944 p=10464 u=vagrant n=ansible | ok: [192.168.56.4] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios"
+}
+2024-11-19 23:27:14,946 p=10464 u=vagrant n=ansible | ok: [192.168.56.5] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios"
+}
+2024-11-19 23:27:14,948 p=10464 u=vagrant n=ansible | ok: [localhost] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios"
+}
+2024-11-19 23:27:14,958 p=10464 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Creo grupos] ********************************************************************************************************************
+2024-11-19 23:27:15,552 p=10464 u=vagrant n=ansible | ok: [localhost] => (item=G_R1)
+2024-11-19 23:27:15,609 p=10464 u=vagrant n=ansible | ok: [192.168.56.4] => (item=G_R1)
+2024-11-19 23:27:15,821 p=10464 u=vagrant n=ansible | ok: [localhost] => (item=G_R2)
+2024-11-19 23:27:15,934 p=10464 u=vagrant n=ansible | changed: [192.168.56.5] => (item=G_R1)
+2024-11-19 23:27:16,207 p=10464 u=vagrant n=ansible | ok: [192.168.56.4] => (item=G_R2)
+2024-11-19 23:27:16,241 p=10464 u=vagrant n=ansible | ok: [localhost] => (item=G_R3)
+2024-11-19 23:27:16,591 p=10464 u=vagrant n=ansible | ok: [localhost] => (item=G_R4)
+2024-11-19 23:27:16,634 p=10464 u=vagrant n=ansible | ok: [192.168.56.4] => (item=G_R3)
+2024-11-19 23:27:16,841 p=10464 u=vagrant n=ansible | ok: [localhost] => (item=G_R5)
+2024-11-19 23:27:17,160 p=10464 u=vagrant n=ansible | ok: [192.168.56.4] => (item=G_R4)
+2024-11-19 23:27:17,181 p=10464 u=vagrant n=ansible | ok: [localhost] => (item=G_R6)
+2024-11-19 23:27:17,478 p=10464 u=vagrant n=ansible | ok: [localhost] => (item=rejunte)
+2024-11-19 23:27:17,557 p=10464 u=vagrant n=ansible | ok: [192.168.56.4] => (item=G_R5)
+2024-11-19 23:27:17,676 p=10464 u=vagrant n=ansible | changed: [192.168.56.5] => (item=G_R2)
+2024-11-19 23:27:17,836 p=10464 u=vagrant n=ansible | ok: [192.168.56.4] => (item=G_R6)
+2024-11-19 23:27:18,091 p=10464 u=vagrant n=ansible | ok: [192.168.56.4] => (item=rejunte)
+2024-11-19 23:27:18,411 p=10464 u=vagrant n=ansible | changed: [192.168.56.5] => (item=G_R3)
+2024-11-19 23:27:19,052 p=10464 u=vagrant n=ansible | changed: [192.168.56.5] => (item=G_R4)
+2024-11-19 23:27:19,721 p=10464 u=vagrant n=ansible | changed: [192.168.56.5] => (item=G_R5)
+2024-11-19 23:27:21,131 p=10464 u=vagrant n=ansible | changed: [192.168.56.5] => (item=G_R6)
+2024-11-19 23:27:21,770 p=10464 u=vagrant n=ansible | changed: [192.168.56.5] => (item=rejunte)
+2024-11-19 23:27:21,777 p=10464 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R1] ****************************************************************************************************************
+2024-11-19 23:27:22,433 p=10464 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:27:22,463 p=10464 u=vagrant n=ansible | ok: [192.168.56.4]
+2024-11-19 23:27:24,208 p=10464 u=vagrant n=ansible | changed: [192.168.56.5]
+2024-11-19 23:27:24,213 p=10464 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R2] ****************************************************************************************************************
+2024-11-19 23:27:24,759 p=10464 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:27:24,810 p=10464 u=vagrant n=ansible | ok: [192.168.56.4]
+2024-11-19 23:27:25,049 p=10464 u=vagrant n=ansible | changed: [192.168.56.5]
+2024-11-19 23:27:25,054 p=10464 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R3] ****************************************************************************************************************
+2024-11-19 23:27:25,614 p=10464 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:27:25,639 p=10464 u=vagrant n=ansible | ok: [192.168.56.4]
+2024-11-19 23:27:26,965 p=10464 u=vagrant n=ansible | changed: [192.168.56.5]
+2024-11-19 23:27:26,971 p=10464 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R4] ****************************************************************************************************************
+2024-11-19 23:27:27,509 p=10464 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:27:27,563 p=10464 u=vagrant n=ansible | ok: [192.168.56.4]
+2024-11-19 23:27:28,845 p=10464 u=vagrant n=ansible | changed: [192.168.56.5]
+2024-11-19 23:27:28,851 p=10464 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R5] ****************************************************************************************************************
+2024-11-19 23:27:29,402 p=10464 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:27:29,453 p=10464 u=vagrant n=ansible | ok: [192.168.56.4]
+2024-11-19 23:27:30,972 p=10464 u=vagrant n=ansible | changed: [192.168.56.5]
+2024-11-19 23:27:30,978 p=10464 u=vagrant n=ansible | TASK [Alta_Usuarios_rejunte : Crea usuario R6] ****************************************************************************************************************
+2024-11-19 23:27:31,510 p=10464 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:27:31,557 p=10464 u=vagrant n=ansible | ok: [192.168.56.4]
+2024-11-19 23:27:32,873 p=10464 u=vagrant n=ansible | changed: [192.168.56.5]
+2024-11-19 23:27:32,878 p=10464 u=vagrant n=ansible | TASK [include_role : Sudoers_rejunte] *************************************************************************************************************************
+2024-11-19 23:27:32,950 p=10464 u=vagrant n=ansible | TASK [Sudoers_rejunte : Rol: Sudoers_rejunte - Grupo: Rejunte] ************************************************************************************************
+2024-11-19 23:27:32,994 p=10464 u=vagrant n=ansible | ok: [192.168.56.4] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_rejunte"
+}
+2024-11-19 23:27:33,002 p=10464 u=vagrant n=ansible | ok: [192.168.56.5] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_rejunte"
+}
+2024-11-19 23:27:33,005 p=10464 u=vagrant n=ansible | ok: [localhost] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_rejunte"
+}
+2024-11-19 23:27:33,011 p=10464 u=vagrant n=ansible | TASK [Sudoers_rejunte : Agregar grupo rejunte a sudoers sin clave] ********************************************************************************************
+2024-11-19 23:27:33,535 p=10464 u=vagrant n=ansible | ok: [localhost]
+2024-11-19 23:27:33,582 p=10464 u=vagrant n=ansible | changed: [192.168.56.5]
+2024-11-19 23:27:33,619 p=10464 u=vagrant n=ansible | ok: [192.168.56.4]
+2024-11-19 23:27:33,629 p=10464 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************************************************
+2024-11-19 23:27:33,630 p=10464 u=vagrant n=ansible | 192.168.56.4               : ok=16   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-19 23:27:33,630 p=10464 u=vagrant n=ansible | 192.168.56.5               : ok=16   changed=11   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-19 23:27:33,630 p=10464 u=vagrant n=ansible | localhost                  : ok=16   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
