@@ -62,12 +62,10 @@ sudo lvcreate -L +2.5G vg_temp -n lv_swap
 sudo mkswap /dev/mapper/vg_temp-lv_swap
 
 
-echo "Monto de forma persistente"
+echo "Monto"
 
 echo "/dev/mapper/vg_temp-lv_swap none swap sw 0 0" | sudo tee -a /etc/fstab
 
-sudo swapon -a
-sudo mount -a
 
 echo "Creo particion tipo LVM para disco 2G"
 sudo fdisk /dev/sde << EOF
@@ -80,4 +78,16 @@ t
 82
 w
 EOF
+
+sudo wipefs -a /dev/sde1
+
+sudo mkswap /dev/sde1
+
+echo "Monto de forma persistente"
+
+echo "dev/sde1 none swap sw 0 0" | sudo tee -a /etc/fstab
+
+sudo swapon -a
+sudo mount -a
+
 echo "LVM terminado"
