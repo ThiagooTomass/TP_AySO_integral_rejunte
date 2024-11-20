@@ -23,8 +23,9 @@
 
 - name: "Crea usuario R1"
   become: yes
-  user:
+  ansible.builtin.user:
     name: R1_Thiago_Ramos
+    create_home: yes
     group: G_R1
     groups: rejunte
     state: present
@@ -32,8 +33,9 @@
 
 - name: "Crea usuario R2"
   become: yes
-  user:
+  ansible.builtin.user:
     name: R2_Patricio_Moretti
+    create_home: yes
     group: G_R2
     groups: rejunte
     state: present
@@ -41,8 +43,9 @@
 
 - name: "Crea usuario R3"
   become: yes
-  user:
+  ansible.builtin.user:
     name: R3_Tadeo_Agustin_Iuliani
+    create_home: yes
     group: G_R3
     groups: rejunte
     state: present
@@ -50,8 +53,9 @@
 
 - name: "Crea usuario R4"
   become: yes
-  user:
+  ansible.builtin.user:
     name: R4_Giuliana_Delgobbo
+    create_home: yes
     group: G_R4
     groups: rejunte
     state: present
@@ -59,8 +63,9 @@
 
 - name: "Crea usuario R5"
   become: yes
-  user:
+  ansible.builtin.user:
     name: R5_Leandro_Manuel_More
+    create_home: yes
     group: G_R5
     groups: rejunte
     state: present
@@ -68,8 +73,9 @@
 
 - name: "Crea usuario R6"
   become: yes
-  user:
+  ansible.builtin.user:
     name: R6_Thiago_Ramos
+    create_home: yes
     group: G_R6
     groups: rejunte
     state: present
