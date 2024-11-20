@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/compartido":{"owner":"vagrant","group":"vagrant","guestpath":"/home/vagrant/compartido","hostpath":"C:/SO/TP/2_equipos - TP/compartido_testing","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/SO/TP/2_equipos - TP","disabled":false,"__vagrantfile":true}}}
