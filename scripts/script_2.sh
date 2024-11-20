@@ -85,7 +85,7 @@ sudo mkswap /dev/sde1
 
 echo "Monto de forma persistente"
 
-echo "dev/sde1 none swap sw 0 0" | sudo tee -a /etc/fstab
+echo "/dev/sde1 none swap sw 0 0" | sudo tee -a /etc/fstab
 
 sudo swapon -a
 sudo mount -a
