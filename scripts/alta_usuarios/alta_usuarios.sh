@@ -26,7 +26,7 @@ do
 	GRUPO=$(echo  $LINEA |awk -F ',' '{print $2}')
 	DIRECTORIO=$(echo $LINEA | awk -F ',' '{print $3}')
 	
-	if [[ "$(sudo grep -c "$USUARIO" /etc/shadow)" -eq 0 ]];then
+	if [[ "$(sudo grep -c "$USUARIO" /etc/passwd)" -eq 0 ]];then
 
 		if [[ "$(sudo grep -c "$GRUPO:" /etc/group)" -eq 0 ]]; then
                 	echo "El grupo $GRUPO se va a crear."
