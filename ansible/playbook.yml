@@ -20,3 +20,6 @@
 
     - include_role:
         name: Sudoers_rejunte
+
+    - include_role:
+        name: Docker

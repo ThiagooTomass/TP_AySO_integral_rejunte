@@ -1,2 +1,4 @@
 ---
 # vars file for Docker
+
+docker_repo_filename: docker
