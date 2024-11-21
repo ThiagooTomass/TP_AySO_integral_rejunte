@@ -9,7 +9,7 @@ version: '3'
   #
 services:
     web:
-        image: thiagotomas/ejemplo_0
+        image: giudelgo/tp-div_314_grupo_rejunte
         ports:
           - "8081:80" 
         volumes:
